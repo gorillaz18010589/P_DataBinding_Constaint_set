@@ -133,15 +133,7 @@ public class MainActivity extends AppCompatActivity {
     //全部的bar都關閉
     private void noShowBars(View[] views, float height, int imageId) {
         for (View view : views) {
-            Log.v("hank", "noShowBars ->" + "view.id:" + view.getId());
-            ConstraintSet constraintSet = new ConstraintSet();
-            constraintSet.clone(activityMainBinding.ccontainer);
-            constraintSet.constrainPercentHeight(view.getId(), height);
-            constraintSet.applyTo(activityMainBinding.ccontainer);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                TransitionManager.beginDelayedTransition(activityMainBinding.ccontainer);
-            }
-            activityMainBinding.img1.setImageDrawable(getResources().getDrawable(imageId));
+            noShowBar(view.getId(),height,imageId);
         }
     }
 
