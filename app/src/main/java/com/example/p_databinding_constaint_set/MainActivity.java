@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.databinding.DataBindingUtil;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.TransitionManager;
@@ -133,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
     //全部的bar都關閉
     private void noShowBars(View[] views, float height, int imageId) {
         for (View view : views) {
-            noShowBar(view.getId(),height,imageId);
+            noShowBar(view.getId(), height, imageId);
         }
     }
 
@@ -152,4 +153,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void toPage2(View view) {
+        startActivity(new Intent(MainActivity.this,TestOBJActivity.class));
+
+    }
 }
